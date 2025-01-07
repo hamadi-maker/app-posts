@@ -1,11 +1,14 @@
+import styles from "./page.module.css";
+
+
 export default async function PostDetails({ params }) {
-    const postId = params.postid;
+    const postId =  params.postid;
 
     // for better user experience if he had issue with internet
     await new Promise((resolve) =>{
         setTimeout(()=>{
             resolve();
-        },2000);
+        },1500);
     });
 
     const response = await fetch(
@@ -19,12 +22,20 @@ export default async function PostDetails({ params }) {
         
     return (
         <div> 
-           <h1> Post details</h1>
+           <h1 className={styles.title}> Post details</h1>
 
 
-           <div>
-                <h1>{post.title}</h1>
-                <p>{post.body}</p>
+           <div className={`${styles.ecard} ${styles.playing}`}>
+                <div className={styles.image}></div>
+                
+                <div className={styles.wave}></div>
+                <div className={styles.wave}></div>
+                <div className={styles.wave}></div>
+
+                <div className={styles.infotop}>
+                    {post.title}
+                    <div className={styles.name}>{post.body}</div>
+                </div>
             </div>
         </div>
     )

@@ -20,8 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <nav className="navbar">
+      <body className={`${geistSans.variable} ${geistMono.variable} `}>
+      <nav className="navbar background">
         <div className="nav-links">
             <Link href="/">Home</Link>
             <Link href="/posts">Posts</Link>
